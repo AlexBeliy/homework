@@ -32,7 +32,7 @@ function returnFirstArgument(a) {
  */
 
 function sumWithDefaults(a, b) {
-    var b = b || 100;
+    b = b || 100;
 
     return a + b;
 }
