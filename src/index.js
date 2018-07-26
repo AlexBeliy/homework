@@ -32,9 +32,9 @@ function returnFirstArgument(a) {
  */
 
 function sumWithDefaults(a, b) {
-    var c = b || 100;
+    var b = b || 100;
 
-    return a + c;
+    return a + b;
 }
 
 /*
