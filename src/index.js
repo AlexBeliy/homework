@@ -107,7 +107,7 @@ function returnArgumentsArray() {
  */
 
 function bindFunction(fn) {
-    var arr = []
+    var arr = [];
 
     for ( var i = 1; i < arguments.length; i++) {
         arr.push(arguments[i])
