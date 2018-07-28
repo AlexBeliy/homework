@@ -114,7 +114,7 @@ function bindFunction(fn) {
     }
 
     return function() {
-        return fn.apply(null, arr)
+        return fn.apply(null, arr);
     };
 
 }
