@@ -49,7 +49,8 @@ function loadTowns() {
       }
       var towns = xhr.response;
       towns.sort((a, b) => { 
-        return (a.name > b.name) ? 1 : -1; 
+
+          return (a.name > b.name) ? 1 : -1; 
       });
                 
           resolved(towns);
@@ -70,7 +71,7 @@ function loadTowns() {
    isMatching('Moscow', 'Moscov') // false
  */
 function isMatching(full, chunk) {
-  return (~full.toLowerCase().indexOf(chunk.toLowerCase())) ? true : false;
+    return (~full.toLowerCase().indexOf(chunk.toLowerCase())) ? true : false;
 }
 
 /* Блок с надписью "Загрузка" */
@@ -86,7 +87,8 @@ const filterResult = homeworkContainer.querySelector('#filter-result');
     loadingBlock.textContent = 'Загрузка...';
     loadingBlock.style.display = 'block';
     filterBlock.style.display = 'none';
-  loadTowns().then((towns) => {
+
+    loadTowns().then((towns) => {
     loadingBlock.style.display = 'none';
     filterBlock.style.display = 'block';
 
@@ -95,11 +97,11 @@ const filterResult = homeworkContainer.querySelector('#filter-result');
         var value = filterInput.value;
         filterResult.innerHTML = '';
         for (var town of towns) {
-          if (isMatching(town.name, value)) {
-              var div = document.createElement('div')
-              div.textContent = town.name;
-              filterResult.appendChild(div);
-          }
+            if (isMatching(town.name, value)) {
+                var div = document.createElement('div')
+                div.textContent = town.name;
+                filterResult.appendChild(div);
+            }
         }
         if (value == '') { 
             filterResult.innerHTML = '';
@@ -115,8 +117,6 @@ const filterResult = homeworkContainer.querySelector('#filter-result');
     });
   })
 })();
-
-
 
 export {
     loadTowns,

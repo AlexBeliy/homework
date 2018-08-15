@@ -30,10 +30,8 @@ function delayPromise(seconds) {
 function loadAndSortTowns() {
 	return new Promise((resolve) => {
 		var xhr = new XMLHttpRequest();
-
 		xhr.open('GET', 'https://raw.githubusercontent.com/smelukov/citiesTest/master/cities.json');
-		xhr.responseType = 'json';
-		
+		xhr.responseType = 'json';		
 		xhr.addEventListener('load', () => {
 			var towns = xhr.response;
 			towns.sort((a, b) => { 
