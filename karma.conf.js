@@ -2,6 +2,7 @@ process.env.CHROME_BIN = require('puppeteer').executablePath()
 
 module.exports = function(config) {
     config.set({
+        debug : true,
         basePath: '',
         frameworks: ['mocha', 'chai'],
         files: [
@@ -20,9 +21,9 @@ module.exports = function(config) {
             fixWebpackSourcePaths: true
         },
         port: 9876,
-        browsers: ['ChromeHeadless'], // или Chrome или Firefox
+        browsers: ['Chrome'], // или Chrome или Firefox
         captureTimeout: 20000,
-        singleRun: true,
+        singleRun: false,
         plugins: [
             require('karma-mocha'),
             require('karma-chai'),
